@@ -15,7 +15,7 @@ import org.jboss.resteasy.annotations.cache.NoCache;
 
 @NoCache
 @RequestScoped
-@Path("/home")
+@Path("/home1")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class HomeResource {
@@ -23,14 +23,13 @@ public class HomeResource {
     public static Map<String, Integer> wrapResult(int value) {
         final Map<String, Integer> response = new HashMap<>();
         response.put("value", value);
-
         return response;
     }
 
     @GET
     @Path("/info")
     public Map<String, Integer> getInfo() {
-        return wrapResult(10);
+        return wrapResult(101);
     }
 
     @PUT
